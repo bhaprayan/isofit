@@ -40,14 +40,7 @@ The code repository, development branches, and user community are found on
 
 .. code::
 
-  python3 -m pip install scipy
-  python3 -m pip install numba
-  python3 -m pip install matplotlib
-  python3 -m pip install scikit-learn
-  python3 -m pip install spectral
-  python3 -m pip install pytest 
-  python3 -m pip install pep8 
-  python3 -m pip install xxhash
+  python3 -m pip install scipy numba matplotlib scikit-learn spectral pytest pep8 xxhash pandas
 
 3. Make sure the isofit/ and utils/ subdirectories are in your Python path like this:
 
@@ -93,16 +86,22 @@ This quick start presumes that you have an installation of the open source libRa
 
 1. Configure your environment with the variables ISOFIT_BASE pointing to the base checkout directory of ISOFIT, and also LIBRADTRAN_DIR pointing to the base libRadTran directory.
 
-2. Run the following code
+2. Copy the tests/data/lut_libradtran library to examples/20171108_Pasadena/lut
+
+.. code::
+
+  cp -rf tests/data/lut_libradtran examples/20171108_Pasadena/lut
+
+3. Run the following code
 
 .. code::
 
     cd examples/20171108_Pasadena
     ./run_example_libradtran.sh
 
-3. This will build a surface model and run the retrieval. The default example uses a lookup table approximation, and the code should recognize that the tables do not currently exist.  It will call libRadTran to rebuild them, which will take a few minutes.
+4. This will build a surface model and run the retrieval. The default example uses a lookup table approximation, and the code should recognize that the tables do not currently exist.  It will call libRadTran to rebuild them, which will take a few minutes.
 
-4. Look for output data in examples/20171108_Pasadena/output/.  Diagnostic images are written to examples/20171108_Pasadena/images/.
+5. Look for output data in examples/20171108_Pasadena/output/.  Diagnostic images are written to examples/20171108_Pasadena/images/.
 
 Additional Installation Info for Mac OSX
 ------------------------------------------
